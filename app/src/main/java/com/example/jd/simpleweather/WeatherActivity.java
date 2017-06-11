@@ -149,6 +149,8 @@ public class WeatherActivity extends AppCompatActivity {
             showInputDialog();
         } else if (item.getItemId() == R.id.about) {
             launchAboutActivity();
+        } else if (item.getItemId() == R.id.menu_refresh) {
+            updateWeatherData(new CityPreference(this).getCity());
         }
 
         return false;

@@ -25,5 +25,6 @@
     <string name="place_not_found">Sorry, no weather data found.</string>
     <string name="about">About</string>
     <string name="about_text">Written by Benevolent Corp.</string>
+    <string name="menu_refresh">Refresh</string>
 
 </resources>
