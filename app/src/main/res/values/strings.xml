@@ -27,4 +27,10 @@
     <string name="about_text">Written by Benevolent Corp.</string>
     <string name="menu_refresh">Refresh</string>
 
+    <string name="humidity_label">Humidity: </string>
+    <string name="pressure_label">Pressure: </string>
+    <string name="last_update_label">Last update: </string>
+    <string name="change_city_dialog_title">Change City</string>
+    <string name="go_button_text">Go</string>
+
 </resources>

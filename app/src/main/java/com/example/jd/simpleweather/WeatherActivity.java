@@ -85,15 +85,15 @@ public class WeatherActivity extends AppCompatActivity {
             JSONObject main = json.getJSONObject("main");
 
             detailsField.setText(details.getString("description").toUpperCase(Locale.US) +
-                    "\n" + "Humidity: " + main.get("humidity")  + "%" +
-                    "\n" + "Pressure: " + main.get("pressure") + " hPa");
+                    "\n" + getString(R.string.humidity_label) + " " + main.get("humidity")  + "%" +
+                    "\n" + getString(R.string.pressure_label) + " " + main.get("pressure") + " hPa");
 
             currentTemperatureField.setText(
                     String.format("%.0f", main.getDouble("temp")) + " °F");
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt") * 1000));
-            updatedField.setText("Last update: " + updatedOn);
+            updatedField.setText(getString(R.string.last_update_label) + " " + updatedOn);
 
             setWeatherIcon(details.getInt("id"),
                     json.getJSONObject("sys").getLong("sunrise") * 1000,
@@ -165,11 +165,11 @@ public class WeatherActivity extends AppCompatActivity {
     private void showInputDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Change City");
+        builder.setTitle(R.string.change_city_dialog_title);
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         builder.setView(input);
-        builder.setPositiveButton("Go", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.go_button_text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 changeCity(input.getText().toString());
