@@ -5,6 +5,7 @@
     <string name="change_city">Change city</string>
     <string name="last_update">Last updated</string>
     <string name="details">Details</string>
+    <string name="background_color">#7EBDF5</string>
 
     <!-- Put your own APP ID here -->
     <string name="open_weather_maps_app_id">3174ae27647585ea9b772b277aeeb5f2</string>
