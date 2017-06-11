@@ -86,10 +86,10 @@ public class WeatherActivity extends AppCompatActivity {
 
             detailsField.setText(details.getString("description").toUpperCase(Locale.US) +
                     "\n" + "Humidity: " + main.get("humidity")  + "%" +
-                    "\n" + "Pressure: " + main.get("pressure") + "hPa");
+                    "\n" + "Pressure: " + main.get("pressure") + " hPa");
 
             currentTemperatureField.setText(
-                    String.format("%.2f", main.getDouble("temp")) + " f");
+                    String.format("%.0f", main.getDouble("temp")) + " °F");
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt") * 1000));
