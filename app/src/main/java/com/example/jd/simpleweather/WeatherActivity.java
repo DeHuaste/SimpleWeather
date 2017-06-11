@@ -100,7 +100,6 @@ public class WeatherActivity extends AppCompatActivity {
                     json.getJSONObject("sys").getLong("sunset") * 1000);
 
         } catch (JSONException e) {
-            Log.e("SimpleWeather", "Error parsing JSON data");
         }
 
     }
@@ -148,10 +147,17 @@ public class WeatherActivity extends AppCompatActivity {
 
         if(item.getItemId() == R.id.change_city) {
             showInputDialog();
+        } else if (item.getItemId() == R.id.about) {
+            launchAboutActivity();
         }
 
         return false;
 
+    }
+
+    private void launchAboutActivity() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     private void showInputDialog() {
