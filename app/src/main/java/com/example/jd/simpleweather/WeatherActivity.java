@@ -1,5 +1,6 @@
 package com.example.jd.simpleweather;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -50,7 +51,12 @@ public class WeatherActivity extends AppCompatActivity {
 
 
     public void changeCity(String city){
+
+        //gets preferences from activity, opens/editst preferences and modifies city
+        this.getPreferences(Activity.MODE_PRIVATE).edit().putString("city", city).commit();
+
         updateWeatherData(city);
+
     }
 
     private void updateWeatherData(final String city) {
